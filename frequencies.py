@@ -4,12 +4,10 @@
 def frequencies(items):
     frequencies = {}
     # Your code goes here
-    mappedList = map(str, items)
+    frequencies = {}
 
-    items = list(mappedList)
+    for item in items:
+        key = str(item) if not isinstance(item, str) else item
+        frequencies[key] = frequencies.get(key, 0) + 1
 
-    for i in items:
-        x = items.count(i)
-        frequencies.update({i : x})
-        
     return frequencies
